@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Music Player</title>
+    <link rel="stylesheet" type="text/css" href="./audio.css" />
+</head>
+
+<body id="body" background="./img/bg0.png">
+
+    <!-- 上半部分 -->
+    <div class="upper-container">
+
+        <!-- 唱片背景 -->
+        <div class="record-container">
+            <div class="record-bg">
+                <div id="record-img" class="rotate-play"></div>
+            </div>
+        </div>
+
+        <!-- 音乐介绍 -->
+        <div class="introduction-container">
+            <div class="text-container">
+                <div id="music-title">音乐1</div>
+
+                <div class="author-container">
+                    作者：
+                    <span id="author-name">未知</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 音乐播放器 -->
+    <div class="audio-box">
+
+        <div class="audio-container">
+
+            <audio id="audioTag"></audio>
+
+            <div class="a-controls">
+
+                <!-- 第一行：进度条 -->
+                <div class="progress-row">
+
+                    <div class="a-progress">
+
+                        <div class="pgs-total" id="progress-total">
+
+                            <div
+                                class="pgs-play"
+                                id="progress"
+                                style="width: 0%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- 第二行：时间和播放控制 -->
+                <div class="control-row">
+
+                    <div class="time-container">
+                        <span class="played-time" id="playedTime">00:00</span>
+                        &nbsp;/&nbsp;
+                        <span class="audio-time" id="audioTime">00:00</span>
+                    </div>
+
+                    <div class="center-button-container">
+
+                        <div id="playMode" class="center-icon mode"></div>
+
+                        <div id="skipForward" class="center-icon s-right"></div>
+
+                        <div id="playPause" class="icon-play"></div>
+
+                        <div id="skipBackward" class="center-icon s-left"></div>
+
+                        <div id="volume" class="center-icon volume"></div>
+
+                        <input
+                            type="range"
+                            id="volumn-togger"
+                            name="change"
+                            value="70"
+                            min="0"
+                            max="100"
+                            step="1"
+                        />
+
+                    </div>
+
+                    <!-- 占位 -->
+                    <div style="width: 100px;"></div>
+
+                </div>
+
+                <!-- 第三行 -->
+                <div class="bottom-row">
+
+                    <div id="list" class="bottom-icon list"></div>
+
+                    <div id="speed" class="speed">1.0X</div>
+
+                    <div id="MV" class="bottom-icon MV"></div>
+
+                </div>
+
+            </div> <!-- a-controls结束 -->
+
+        </div> <!-- audio-container结束 -->
+
+    </div> <!-- audio-box结束 -->
+
+
+    <!-- 遮罩层 -->
+    <div class="close-list" id="close-list"></div>
+
+
+    <!-- 播放列表 -->
+    <div class="music-list" id="music-list">
+
+        <div class="music-list-container">
+
+            <div class="music-list-title">
+                播放队列
+            </div>
+
+            <hr class="line" />
+
+            <div class="all-list">
+
+                <div id="music0">收敛水</div>
+
+                <div id="music1">踩脚踏车</div>
+
+                <div id="music2">外面有点冷</div>
+
+                <div id="music3">史诗</div>
+
+            </div>
+
+        </div>
+
+    </div>
+      <!-- MV弹窗 -->
+<div class="video-modal" id="video-modal">
+
+    <div class="video-container">
+
+        <video id="mv-video" controls>
+            <source src="" type="video/mp4">
+        </video>
+
+        <div class="close-video" id="close-video">×</div>
+
+    </div>
+
+</div>
+
+    <script src="./audio.js"></script>
+
+</body>
+</html>
