@@ -75,7 +75,12 @@ overflow-y: auto;
 
 /* 唱片旋转动画 */
 .rotate-play {
-    animation: rotate 5s linear infinite;
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;          /* 核心：默认是暂停状态 */
+}
+
+.rotate-play.playing {
+    animation-play-state: running;
 }
 
 @keyframes rotate {
