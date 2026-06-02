@@ -310,3 +310,19 @@ progressTotal.addEventListener('click', function (e) {
         (clickX / width) * duration;
 
 });
+
+// ==========================================
+// 新增：全局监听音频播放/暂停状态，完美联动唱片
+// ==========================================
+
+// 当音频真正开始播放时，让唱片转动
+audio.addEventListener('play', function() {
+    console.log('全局监听到：音乐开始播放，唱片转动');
+    recordImg.classList.add('playing');
+});
+
+// 当音频真正暂停时，让唱片停止
+audio.addEventListener('pause', function() {
+    console.log('全局监听到：音乐暂停，唱片停止');
+    recordImg.classList.remove('playing');
+});
